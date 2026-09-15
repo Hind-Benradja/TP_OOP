@@ -6,12 +6,8 @@ pieces_stock = {
 }
 
 def quantite_piece(dictio, modele, piece):
-    if modele not in dictio:
-        erreur = "\""
-        return erreur
-    else :
-        result = dictio[modele][piece]
-        return result
+    result = dictio[modele][piece]
+    return result
 assert quantite_piece(pieces_stock, "ModeleA", "moteurs") == 10
 
 #question 2
@@ -30,13 +26,13 @@ consommer_piece(pieces_stock, "ModeleA", "moteurs", 3)
 ajouter_modele(pieces_stock, "ModeleC", moteurs=4, capteurs=10, roues=16)
 assert pieces_stock["ModeleC"] == {"moteurs": 4, "capteurs": 10, "roues": 16}
 
-def total_pieces(pieces_stock[]):
+def total_pieces(pieces_stock):
     pieces_stock[modele] = {"moteurs": moteurs, "capteurs": capteurs, "roues": roues}
     for modele in pieces_stock:
         if mot not in somme:
             somme[mot] = pieces_stock[modele][mot]
-            else:
-    somme_mot= somme_mot+pieces_stock[modele]
+        else:
+            somme[mot] = somme[mot] + pieces_stock[modele][mot]
     return somme
     
 totaux = total_pieces(pieces_stock)
